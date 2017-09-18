@@ -289,10 +289,9 @@ function og_entity_type_alter(array &$entity_types) {
 function og_invalidate_group_content_cache_tags(EntityInterface $entity) {
   // If group content is created or updated, invalidate the group content cache
   // tags for each of the groups this group content belongs to. This allows
-  // group listings to be cached effectively. Also invalidate the tags if the
-  // group itself changes. The cache tag format is
+  // group listings to be cached effectively. The cache tag format is
   // 'og-group-content:{group entity type}:{group entity id}'.
-  if (Og::isGroup($entity->getEntityTypeId(), $entity->bundle()) || Og::isGroupContent($entity->getEntityTypeId(), $entity->bundle())) {
+  if (Og::isGroupContent($entity->getEntityTypeId(), $entity->bundle())) {
     $tags = [];
     foreach (\Drupal::service('og.membership_manager')->getGroupIds($entity) as $entity_type => $ids) {
       foreach ($ids as $id) {
