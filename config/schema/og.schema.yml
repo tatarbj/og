@@ -153,3 +153,7 @@ condition.plugin.og_group_type:
       type: sequence
       sequence:
         type: string
+
+entity_reference_selection.og:default:
+  type: entity_reference_selection.default
+  label: 'OG entity selection handler settings'
