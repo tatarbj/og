@@ -195,7 +195,8 @@ class GroupMembershipManagerTest extends KernelTestBase {
       try {
         $membership_manager->getGroupIds($test_case);
         $this->fail();
-      } catch (\InvalidArgumentException $e) {
+      }
+      catch (\InvalidArgumentException $e) {
         // Expected result.
       }
     }
